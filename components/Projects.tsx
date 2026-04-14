@@ -60,9 +60,8 @@ const fadeInUp = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 px-6 bg-[#FAFAF8]">
+    <section id="projects" className="py-28 px-6 bg-[#0a0a0f]">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -70,25 +69,24 @@ export default function Projects() {
           variants={fadeInUp}
           className="mb-14 space-y-3"
         >
-          <span className="text-xs font-medium tracking-widest text-neutral-400 uppercase">
+          <span className="text-xs font-medium tracking-widest text-blue-500 uppercase">
             Selected Work
           </span>
           <div className="flex items-end justify-between flex-wrap gap-4">
-            <h2 className="text-3xl md:text-5xl font-semibold text-neutral-900 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight">
               Projects
             </h2>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors border-b border-transparent hover:border-neutral-400 pb-0.5"
+              className="text-sm text-slate-500 hover:text-blue-400 transition-colors border-b border-transparent hover:border-blue-400/40 pb-0.5"
             >
               View all on GitHub →
             </a>
           </div>
         </motion.div>
 
-        {/* Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -108,4 +106,4 @@ export default function Projects() {
       </div>
     </section>
   )
-        }
+    }
