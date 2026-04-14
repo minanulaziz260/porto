@@ -24,7 +24,7 @@ const fadeInUp = {
 
 export default function About() {
   return (
-    <section id="about" className="py-28 px-6 bg-white">
+    <section id="about" className="py-28 px-6 bg-[#0d0d14]">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Text */}
@@ -36,40 +36,40 @@ export default function About() {
             className="space-y-7"
           >
             <div className="space-y-2">
-              <span className="text-xs font-medium tracking-widest text-neutral-400 uppercase">
+              <span className="text-xs font-medium tracking-widest text-blue-500 uppercase">
                 About Me
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-900 tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight">
                 I build intelligent,
                 <br />
-                <span className="text-neutral-400">beautiful things.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+                  beautiful things.
+                </span>
               </h2>
             </div>
 
-            <p className="text-neutral-500 leading-relaxed text-base md:text-lg">
+            <p className="text-slate-400 leading-relaxed text-base md:text-lg">
               I&apos;m a creative developer and AI engineer passionate about
               merging cutting-edge technology with elegant design. Based in
               Indonesia, I craft web experiences, AI tools, and automated
               systems that are both functional and beautiful.
             </p>
 
-            <p className="text-neutral-500 leading-relaxed">
+            <p className="text-slate-400 leading-relaxed">
               From interactive digital invitations to AI-powered video
               generation pipelines — I love bringing ambitious ideas to life
               through code, creativity, and automation.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 border-b border-neutral-900 hover:border-neutral-400 hover:text-neutral-500 transition-all duration-200 pb-0.5"
-              >
-                See my work →
-              </a>
-            </div>
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors border-b border-blue-500/40 hover:border-blue-400 pb-0.5"
+            >
+              See my work →
+            </a>
           </motion.div>
 
-          {/* Right: Skill Tags */}
+          {/* Right: Skills */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -91,24 +91,24 @@ export default function About() {
                     transition: { duration: 0.4, ease: 'easeOut' },
                   },
                 }}
-                className="px-4 py-2.5 border border-neutral-200 rounded-full text-sm text-neutral-600 font-medium hover:border-neutral-900 hover:text-neutral-900 hover:bg-neutral-50 transition-all duration-200 cursor-default"
+                className="px-4 py-2.5 border border-blue-500/20 rounded-full text-sm text-slate-400 font-medium hover:border-blue-400 hover:text-blue-300 hover:bg-blue-500/10 transition-all duration-200 cursor-default"
               >
                 {skill}
               </motion.span>
             ))}
 
-            {/* Large decorative card */}
+            {/* Feature card */}
             <motion.div
               variants={fadeInUp}
-              className="w-full mt-4 p-6 rounded-2xl bg-neutral-900 text-white"
+              className="w-full mt-4 p-6 rounded-2xl bg-gradient-to-br from-blue-600/20 to-blue-900/20 border border-blue-500/20"
             >
-              <div className="text-xs font-medium text-neutral-400 tracking-widest uppercase mb-2">
+              <div className="text-xs font-medium text-blue-400/70 tracking-widest uppercase mb-2">
                 Currently Working On
               </div>
-              <div className="text-base font-medium">
+              <div className="text-base font-medium text-white">
                 AI-Powered Creative Studio &amp; Digital Automation Tools
               </div>
-              <div className="mt-3 text-sm text-neutral-400">
+              <div className="mt-3 text-sm text-slate-400">
                 Building the next generation of creative tools that blend
                 generative AI with beautiful interfaces.
               </div>
