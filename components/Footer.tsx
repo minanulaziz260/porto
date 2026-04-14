@@ -23,16 +23,16 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="bg-[#FAFAF8] border-t border-neutral-200"
+      className="bg-[#0a0a0f] border-t border-blue-900/30"
     >
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid sm:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
           <div className="space-y-3">
-            <div className="text-base font-semibold text-neutral-900 tracking-tight">
-              AZIZVERSE
+            <div className="text-base font-semibold tracking-tight text-white">
+              AZIZ<span className="text-blue-500">VERSE</span>
             </div>
-            <p className="text-sm text-neutral-500 leading-relaxed max-w-xs">
+            <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
               Building intelligent experiences through code, design, and
               automation.
             </p>
@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="space-y-4">
-            <div className="text-xs font-medium text-neutral-400 uppercase tracking-widest">
+            <div className="text-xs font-medium text-blue-500/60 uppercase tracking-widest">
               Navigation
             </div>
             <nav className="flex flex-col gap-2.5">
@@ -48,7 +48,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors w-fit"
+                  className="text-sm text-slate-500 hover:text-blue-400 transition-colors w-fit"
                 >
                   {link.label}
                 </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="space-y-4">
-            <div className="text-xs font-medium text-neutral-400 uppercase tracking-widest">
+            <div className="text-xs font-medium text-blue-500/60 uppercase tracking-widest">
               Connect
             </div>
             <nav className="flex flex-col gap-2.5">
@@ -68,7 +68,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors w-fit"
+                  className="text-sm text-slate-500 hover:text-blue-400 transition-colors w-fit"
                 >
                   {link.label} ↗
                 </a>
@@ -77,12 +77,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-neutral-200 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-neutral-400">
+        {/* Bottom */}
+        <div className="border-t border-blue-900/30 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-600">
             © {new Date().getFullYear()} AZIZVERSE. All rights reserved.
           </p>
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-slate-600">
             Built with Next.js · Tailwind CSS · Framer Motion
           </p>
         </div>
