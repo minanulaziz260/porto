@@ -29,9 +29,9 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 pb-20 overflow-hidden"
     >
-      {/* Background gradient orbs */}
+      {/* Background orbs — FIXED: removed bg-gradient-radial (not standard Tailwind) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-neutral-200/40 to-transparent blur-3xl" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-neutral-200/30 blur-3xl" />
         <div className="absolute top-1/3 -left-40 w-96 h-96 rounded-full bg-neutral-100/60 blur-3xl" />
         <div className="absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-neutral-100/60 blur-3xl" />
       </div>
@@ -79,7 +79,9 @@ export default function Hero() {
             className="group inline-flex items-center gap-2 px-7 py-3.5 bg-neutral-900 text-white text-sm font-medium rounded-full hover:bg-neutral-700 transition-all duration-200 hover:shadow-xl hover:shadow-neutral-900/20"
           >
             View My Work
-            <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
+            <span className="group-hover:translate-x-0.5 transition-transform duration-200">
+              →
+            </span>
           </a>
           <a
             href="#contact"
@@ -100,7 +102,9 @@ export default function Hero() {
             { value: '100%', label: 'Client Satisfaction' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-xl font-semibold text-neutral-900">{stat.value}</div>
+              <div className="text-xl font-semibold text-neutral-900">
+                {stat.value}
+              </div>
               <div className="text-xs text-neutral-400 mt-0.5">{stat.label}</div>
             </div>
           ))}
