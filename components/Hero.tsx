@@ -5,9 +5,7 @@ import { motion } from 'framer-motion'
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.15 },
   },
 }
 
@@ -29,11 +27,20 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 pb-20 overflow-hidden"
     >
-      {/* Background orbs — FIXED: removed bg-gradient-radial (not standard Tailwind) */}
+      {/* Background glow orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-neutral-200/30 blur-3xl" />
-        <div className="absolute top-1/3 -left-40 w-96 h-96 rounded-full bg-neutral-100/60 blur-3xl" />
-        <div className="absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-neutral-100/60 blur-3xl" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-blue-600/10 blur-3xl" />
+        <div className="absolute top-1/3 -left-40 w-96 h-96 rounded-full bg-blue-900/20 blur-3xl" />
+        <div className="absolute bottom-1/4 -right-40 w-96 h-96 rounded-full bg-blue-800/15 blur-3xl" />
+        {/* Grid pattern overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(59,130,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        />
       </div>
 
       <motion.div
@@ -44,8 +51,8 @@ export default function Hero() {
       >
         {/* Badge */}
         <motion.div variants={itemVariants} className="flex justify-center">
-          <span className="inline-flex items-center gap-2 text-xs font-medium tracking-widest text-neutral-500 uppercase border border-neutral-200 rounded-full px-4 py-1.5 bg-white/80 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+          <span className="inline-flex items-center gap-2 text-xs font-medium tracking-widest text-blue-400 uppercase border border-blue-500/30 rounded-full px-4 py-1.5 bg-blue-500/10 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
             Available for New Projects
           </span>
         </motion.div>
@@ -53,17 +60,19 @@ export default function Hero() {
         {/* Heading */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-neutral-900 leading-[1.05]"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-white leading-[1.05]"
         >
           Building the
           <br />
-          <span className="text-neutral-400">Future with AI.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+            Future with AI.
+          </span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-neutral-500 max-w-xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-slate-400 max-w-xl mx-auto leading-relaxed"
         >
           AI Engineer &amp; Creative Developer crafting intelligent experiences
           through code, design, and automation.
@@ -76,16 +85,14 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group inline-flex items-center gap-2 px-7 py-3.5 bg-neutral-900 text-white text-sm font-medium rounded-full hover:bg-neutral-700 transition-all duration-200 hover:shadow-xl hover:shadow-neutral-900/20"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 bg-blue-600 text-white text-sm font-medium rounded-full hover:bg-blue-500 transition-all duration-200 hover:shadow-xl hover:shadow-blue-600/40"
           >
             View My Work
-            <span className="group-hover:translate-x-0.5 transition-transform duration-200">
-              →
-            </span>
+            <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 border border-neutral-200 text-neutral-700 text-sm font-medium rounded-full hover:border-neutral-400 hover:text-neutral-900 hover:bg-white transition-all duration-200 bg-white/50 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-7 py-3.5 border border-blue-500/30 text-slate-300 text-sm font-medium rounded-full hover:border-blue-400 hover:text-white transition-all duration-200 bg-blue-500/5"
           >
             Get in Touch
           </a>
@@ -94,7 +101,7 @@ export default function Hero() {
         {/* Stats Row */}
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center gap-10 pt-4 border-t border-neutral-200/60 mt-6"
+          className="flex items-center justify-center gap-10 pt-4 border-t border-blue-900/40 mt-6"
         >
           {[
             { value: '50+', label: 'Projects Built' },
@@ -102,10 +109,8 @@ export default function Hero() {
             { value: '100%', label: 'Client Satisfaction' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-xl font-semibold text-neutral-900">
-                {stat.value}
-              </div>
-              <div className="text-xs text-neutral-400 mt-0.5">{stat.label}</div>
+              <div className="text-xl font-semibold text-white">{stat.value}</div>
+              <div className="text-xs text-slate-500 mt-0.5">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -118,15 +123,15 @@ export default function Hero() {
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] text-neutral-400 tracking-widest uppercase font-medium">
+        <span className="text-[10px] text-slate-600 tracking-widest uppercase font-medium">
           Scroll
         </span>
         <motion.div
           animate={{ y: [0, 7, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-          className="w-px h-8 bg-gradient-to-b from-neutral-300 to-transparent"
+          className="w-px h-8 bg-gradient-to-b from-blue-500 to-transparent"
         />
       </motion.div>
     </section>
   )
-}
+          }
